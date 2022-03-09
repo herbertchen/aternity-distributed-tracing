@@ -1,0 +1,218 @@
+Running tool: /usr/local/go/bin/go test -timeout 30s -run ^TestDTrace$ gitlab.dev.activenetwork.com/golang/aternity-distrubuted-tracing/dtrace -v
+
+=== RUN   TestDTrace
+2022/03/09 16:12:26.375457 DEBUG RESTY
+==============================================================================
+~~~ REQUEST ~~~
+GET  /dtrace  HTTP/1.1
+HOST   : localhost:8080
+HEADERS:
+	Ot-Tracer-Sampled: true
+	Ot-Tracer-Spanid: f0b519f35e56e5fd
+	Ot-Tracer-Traceid: cfc1fb71c52f9c2c
+	User-Agent: go-resty/2.7.0 (https://github.com/go-resty/resty)
+BODY   :
+***** NO CONTENT *****
+------------------------------------------------------------------------------
+~~~ RESPONSE ~~~
+STATUS       : 200 OK
+PROTO        : HTTP/1.1
+RECEIVED AT  : 2022-03-09T16:12:26.375204+08:00
+TIME DURATION: 1.898113301s
+HEADERS      :
+	Content-Length: 18
+	Content-Type: application/json; charset=utf-8
+	Date: Wed, 09 Mar 2022 08:12:26 GMT
+BODY         :
+{
+   "message": "pong"
+}
+==============================================================================
+2022/03/09 16:12:26 200
+2022/03/09 16:12:27.808527 DEBUG RESTY
+==============================================================================
+~~~ REQUEST ~~~
+GET  /dtrace  HTTP/1.1
+HOST   : localhost:8080
+HEADERS:
+	Ot-Tracer-Sampled: true
+	Ot-Tracer-Spanid: fc60ab56a18cbfc5
+	Ot-Tracer-Traceid: df5aa9ff7c077a29
+	User-Agent: go-resty/2.7.0 (https://github.com/go-resty/resty)
+BODY   :
+***** NO CONTENT *****
+------------------------------------------------------------------------------
+~~~ RESPONSE ~~~
+STATUS       : 200 OK
+PROTO        : HTTP/1.1
+RECEIVED AT  : 2022-03-09T16:12:27.808492+08:00
+TIME DURATION: 1.432948088s
+HEADERS      :
+	Content-Length: 18
+	Content-Type: application/json; charset=utf-8
+	Date: Wed, 09 Mar 2022 08:12:27 GMT
+BODY         :
+{
+   "message": "pong"
+}
+==============================================================================
+2022/03/09 16:12:27 200
+{
+	"Name": "active.tax-service.dtrace-client",
+	"SpanContext": {
+		"TraceID": "4067b4e14fa4855fdf5aa9ff7c077a29",
+		"SpanID": "fc60ab56a18cbfc5",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00000000000000000000000000000000",
+		"SpanID": "0000000000000000",
+		"TraceFlags": "00",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2022-03-09T16:12:26.37549+08:00",
+	"EndTime": "2022-03-09T16:12:27.8085325+08:00",
+	"Attributes": [
+		{
+			"Key": "key1",
+			"Value": {
+				"Type": "STRING",
+				"Value": "value1"
+			}
+		},
+		{
+			"Key": "boolkey",
+			"Value": {
+				"Type": "BOOL",
+				"Value": true
+			}
+		},
+		{
+			"Key": "intarraykey",
+			"Value": {
+				"Type": "INT64SLICE",
+				"Value": [
+					1,
+					2,
+					3
+				]
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "library.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "active.tax-service.client"
+			}
+		}
+	],
+	"InstrumentationLibrary": {
+		"Name": "tax-rate",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+{
+	"Name": "active.tax-service.dtrace-client",
+	"SpanContext": {
+		"TraceID": "558ca7348b3869dfcfc1fb71c52f9c2c",
+		"SpanID": "f0b519f35e56e5fd",
+		"TraceFlags": "01",
+		"TraceState": "",
+		"Remote": false
+	},
+	"Parent": {
+		"TraceID": "00000000000000000000000000000000",
+		"SpanID": "0000000000000000",
+		"TraceFlags": "00",
+		"TraceState": "",
+		"Remote": false
+	},
+	"SpanKind": 1,
+	"StartTime": "2022-03-09T16:12:24.476963+08:00",
+	"EndTime": "2022-03-09T16:12:28.231704219+08:00",
+	"Attributes": [
+		{
+			"Key": "key1",
+			"Value": {
+				"Type": "STRING",
+				"Value": "value1"
+			}
+		},
+		{
+			"Key": "boolkey",
+			"Value": {
+				"Type": "BOOL",
+				"Value": true
+			}
+		},
+		{
+			"Key": "intarraykey",
+			"Value": {
+				"Type": "INT64SLICE",
+				"Value": [
+					1,
+					2,
+					3
+				]
+			}
+		}
+	],
+	"Events": null,
+	"Links": null,
+	"Status": {
+		"Code": "Unset",
+		"Description": ""
+	},
+	"DroppedAttributes": 0,
+	"DroppedEvents": 0,
+	"DroppedLinks": 0,
+	"ChildSpanCount": 0,
+	"Resource": [
+		{
+			"Key": "library.language",
+			"Value": {
+				"Type": "STRING",
+				"Value": "go"
+			}
+		},
+		{
+			"Key": "service.name",
+			"Value": {
+				"Type": "STRING",
+				"Value": "active.tax-service.client"
+			}
+		}
+	],
+	"InstrumentationLibrary": {
+		"Name": "tax-rate",
+		"Version": "",
+		"SchemaURL": ""
+	}
+}
+--- PASS: TestDTrace (3.96s)
+PASS
+ok  	gitlab.dev.activenetwork.com/golang/aternity-distrubuted-tracing/dtrace	4.429s
